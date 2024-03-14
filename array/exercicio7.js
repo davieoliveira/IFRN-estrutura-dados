@@ -5,11 +5,10 @@
 const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 
 arr.sort((a, b) => {
-    // Primeiro, ordena pelos números.
+
     if (a < b) return -1;
     if (a > b) return 1;
 
-    // Se os números forem iguais, mantenha a ordem original.
     return arr.indexOf(a) - arr.indexOf(b);
 });
 
