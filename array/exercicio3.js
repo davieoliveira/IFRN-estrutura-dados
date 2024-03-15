@@ -5,3 +5,4 @@
  * a soma máxima possível de um subarray contínuo dentro de um array de números inteiros, que pode 
  * conter valores negativos e positivos. Para solução, você pode usar o algoritmo de Kadane.
  */
+
