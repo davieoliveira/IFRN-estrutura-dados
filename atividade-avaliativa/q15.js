@@ -2,18 +2,16 @@
  * 15. Escreva uma função que receba um array e um número alvo, e retorne todos os
  * pares de elementos do array cuja soma seja igual ao número alvo. 
  */
-
-function somados(array, numeroAlvo) {
-    let somas = [] 
+function retornarSoma(array, number) {
+    let newArray = [];
     for(let x = 0 ; array.length > x ; x++) {
-        for(let y = 0 ; array.length > y ; y++){
-            if(array[x] + array[y] == numeroAlvo){
-                somas.push('A soma do número ' + array[x] + ' + ' + array[y] + ' = ' + numeroAlvo)
+        for(let y = 0 ; array.length > y ; y++) {
+            if(array[x] + array[y] == number && y != x) {
+                newArray.push([array[x], array[y]]);
             }
         }
-    }  
-    console.log(somas)
+    }
+    console.log(newArray);
 }
-
-array = [6, 4, 5, 5];
-somados(array, 10)
+array = [2, 2, 2, 2, 10, 10, 1, 3];
+retornarSoma(array, 4);
