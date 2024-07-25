@@ -6,7 +6,7 @@ function mostRepeatedElement(array) {
     
     for(let x = 0 ; array.length > x ; x++){
         for(let y = 0 ; array.length > y ; y++) {
-            if(array[x] == array[y] && x != y) {
+            if(array[x] == array[y]) {
                 count += 1;
                 if(count > highestCount) {
                     highestCount = count;
