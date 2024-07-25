@@ -11,7 +11,7 @@ function sumElements(array, number) {
             }
         }
     }
-    console.log(newArray);
+    return newArray;
 }
-array = [2, 2, 2, 2, 10, 10, 1, 3];
-sumElements(array, 4);
+let array = [2, 2, 3, 1];
+console.log(sumElements(array, 4));

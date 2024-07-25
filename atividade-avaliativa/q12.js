@@ -7,18 +7,16 @@ function similarElements(array1, array2) {
 
     for(let x = 0 ; array1.length > x ; x++){
         for(let y = 0 ; array2.length > y ; y++){
-            // Verificando se o array é igual ao outro, comparando um a um.
             if(array1[x] == array2[y]) {
-                // Verificando se o valor está incluso no array 
                 if(!newArray.includes(array1[x])) {
                     newArray.push(array1[x]);
                 }
             }
         }
     }
-    console.log(newArray)
+    return newArray;
 }
 
 array1 = [1, 2, 3, 4];
 array2 = [4, 6, 7, 2 , 2];
-similarElements(array1, array2)
+console.log(similarElements(array1, array2))
