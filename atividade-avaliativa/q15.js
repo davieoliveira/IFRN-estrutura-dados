@@ -15,10 +15,13 @@
  */
 export default function parDeSoma(array, numero) {
     let novoArray = [];
-    for(let x = 0 ; array.length > x ; x++) {
-        for(let y = 0 ; array.length > y ; y++) {
-            if(array[x] + array[y] == numero && y != x) {
-                novoArray.push([array[x], array[y]]);
+    for (let x = 0; x < array.length; x++) {
+        for (let y = x + 1; y < array.length; y++) {
+            if (array[x] + array[y] == numero) {
+    
+                if (!novoArray.some(pair => (pair[0] === array[x] && pair[1] === array[y]) || (pair[0] === array[y] && pair[1] === array[x]))) {
+                    novoArray.push([array[x], array[y]]);
+                }
             }
         }
     }
