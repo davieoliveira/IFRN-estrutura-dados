@@ -1,28 +1,30 @@
-/** 
- * 14. Escreva uma função que encontre o segundo maior número em um array de
- * números.
-*/
-function secondLargestNumber(array){
-    let largestNumber = array[0];
-    let secondLargestNumber = array[0];
+/**
+ * Encontra o segundo maior número em um array de números.
+ *
+ * @param {number[]} array - Um array de números.
+ * @returns {number} O segundo maior número no array.
+ *
+ * @example
+ *
+ * const array = [1, 2, 3, 4, 5];
+ * console.log(secondLargestNumber(array));
+ * // Saída: 4
+ */
+export default function segundoMaiorNumero(array){
+    let maiorNumero = array[0];
+    let segundoMaiorNumero = array[0];
 
-    // Achando o primeiro maior valor
     for(let x = 0 ; array.length > x ; x++) {
-        if(array[x] > largestNumber){
-            largestNumber = array[x];
+        if(array[x] > maiorNumero){
+            maiorNumero = array[x];
         }
     }
-    // Achando o segundo maior valor
     for(let x = 0 ; array.length > x ; x++) {
-        if(array[x] > secondLargestNumber) {
-            if(array[x] != largestNumber){
-                secondLargestNumber = array[x];
+        if(array[x] > segundoMaiorNumero) {
+            if(array[x] != maiorNumero){
+                segundoMaiorNumero = array[x];
             }
         }
     } 
-    return secondLargestNumber;
+    return segundoMaiorNumero;
     }
-
-array = [1, 2, 3, 4, 5, 6, 7, 8, 2000, 2001];
-console.log(secondLargestNumber(array));
-

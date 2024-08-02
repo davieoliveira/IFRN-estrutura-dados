@@ -1,17 +1,26 @@
 /**
- * 15. Escreva uma função que receba um array e um número alvo, e retorne todos os
+ * Essa função recebe um número alvo e em seguida, retorna todas todos os
  * pares de elementos do array cuja soma seja igual ao número alvo. 
+ *
+ * @param {number[]} array - Um array de números.
+ * @param {number} numero - um número alvo
+ *
+ * @returns {number[][]} Um array de pares de elementos cuja soma é igual ao número alvo.
+ *
+ * @example
+ *
+ * const array = [2, 2, 3, 1];
+ * console.log(parDeSoma(array, 4));
+ * // Saída: [ [ 2, 2 ], [ 2, 2 ], [ 3, 1 ], [ 1, 3 ] ]
  */
-function sumElements(array, number) {
-    let newArray = [];
+export default function parDeSoma(array, numero) {
+    let novoArray = [];
     for(let x = 0 ; array.length > x ; x++) {
         for(let y = 0 ; array.length > y ; y++) {
-            if(array[x] + array[y] == number && y != x) {
-                newArray.push([array[x], array[y]]);
+            if(array[x] + array[y] == numero && y != x) {
+                novoArray.push([array[x], array[y]]);
             }
         }
     }
-    return newArray;
+    return novoArray;
 }
-let array = [2, 2, 3, 1];
-console.log(sumElements(array, 4));
