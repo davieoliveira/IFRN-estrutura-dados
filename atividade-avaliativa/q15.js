@@ -1,6 +1,6 @@
 /**
  * Essa função recebe um número alvo e em seguida, retorna todas todos os
- * pares de elementos do array cuja soma seja igual ao número alvo. 
+ * pares de elementos do array cuja soma seja igual ao número alvo.
  *
  * @param {number[]} array - Um array de números.
  * @param {number} numero - um número alvo
@@ -9,21 +9,26 @@
  *
  * @example
  *
- * const array = [2, 2, 3, 1];
+ * const array = [2, 2, 3, 1]; => [3, 1] = [1, 3]
  * console.log(parDeSoma(array, 4));
  * // Saída: [ [ 2, 2 ], [ 2, 2 ], [ 3, 1 ], [ 1, 3 ] ]
  */
-export default function parDeSoma(array, numero) {
-    let novoArray = [];
-    for (let x = 0; x < array.length; x++) {
-        for (let y = x + 1; y < array.length; y++) {
-            if (array[x] + array[y] == numero) {
-    
-                if (!novoArray.some(pair => (pair[0] === array[x] && pair[1] === array[y]) || (pair[0] === array[y] && pair[1] === array[x]))) {
-                    novoArray.push([array[x], array[y]]);
-                }
-            }
+function parDeSoma(array, numero) {
+  let finalArr = [];
+
+  for (let x = 0; x < array.length; x++) {
+    for (let y = x + 1; y < array.length; y++) {
+      if (array[x] + array[y] == numero) {
+        const pair = [array[x], array[y]].sort();
+
+        if (
+          !finalArr.find((item) => item[0] === pair[0] && item[1] === pair[1])
+        ) {
+          finalArr.push(pair);
         }
+      }
     }
-    return novoArray;
+  }
+
+  return finalArr;
 }
